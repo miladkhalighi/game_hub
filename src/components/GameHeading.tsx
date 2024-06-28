@@ -11,7 +11,7 @@ const GameHeading = () => {
   const genre = useGenre(selectedGenreId);
 
   const heading = `${platform?.name ?? ""} ${genre?.name ?? ""} Games`;
-  return <Heading>{heading}</Heading>;
+  return <Heading color={'gray'}>{heading}</Heading>;
 };
 
 export default GameHeading;

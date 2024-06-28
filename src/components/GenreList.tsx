@@ -19,7 +19,7 @@ const GenreList = () => {
 
   return (
     <>
-      <Heading fontSize={"2xl"} mb={3}>
+      <Heading fontSize={"2xl"} color={'gray'} mb={3}>
         Genres
       </Heading>
       {isLoading && <Spinner />}
@@ -42,6 +42,7 @@ const GenreList = () => {
                   fontWeight={selectedGenreId === genre.id ? "bold" : "normal"}
                   whiteSpace={"normal"}
                   textAlign={"left"}
+                  textColor={'gray'}
                 >
                   {genre.name}
                 </Button>

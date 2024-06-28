@@ -1,4 +1,4 @@
-import { HStack, Icon } from "@chakra-ui/react";
+import { Box, HStack, Icon } from "@chakra-ui/react";
 import {
   FaWindows,
   FaPlaystation,
@@ -18,37 +18,35 @@ interface Props {
 }
 
 interface PlatformModel {
-    icon : IconType
-    name : string
-    color : string 
+  icon: IconType;
+  name: string;
+  color: string;
 }
 
 const PlatformIconList = ({ platforms }: Props) => {
-    const platformModels: PlatformModel[] = [
-        { icon: FaWindows, name: 'pc', color: '#0078D6' }, // Windows blue
-        { icon: FaPlaystation, name: 'playstation', color: '#003087' }, // PlayStation blue
-        { icon: FaXbox, name: 'xbox', color: '#107C10' }, // Xbox green
-        { icon: SiNintendo, name: 'nintendo', color: '#E60012' }, // Nintendo red
-        { icon: FaApple, name: 'mac', color: '#000000' }, // Apple black
-        { icon: FaLinux, name: 'linux', color: '#FCC624' }, // Linux yellow
-        { icon: FaAndroid, name: 'android', color: '#3DDC84' }, // Android green
-        { icon: MdPhoneIphone, name: 'ios', color: '#000000' }, // iOS black
-        { icon: BsGlobe, name: 'web', color: '#4285F4' }, // Web blue (Google)
-      ];
-
-  
+  const platformModels: PlatformModel[] = [
+    { icon: FaWindows, name: "pc", color: "#0078D6" }, // Windows blue
+    { icon: FaPlaystation, name: "playstation", color: "#003087" }, // PlayStation blue
+    { icon: FaXbox, name: "xbox", color: "#107C10" }, // Xbox green
+    { icon: SiNintendo, name: "nintendo", color: "#E60012" }, // Nintendo red
+    { icon: FaApple, name: "mac", color: "#000000" }, // Apple black
+    { icon: FaLinux, name: "linux", color: "#FCC624" }, // Linux yellow
+    { icon: FaAndroid, name: "android", color: "#3DDC84" }, // Android green
+    { icon: MdPhoneIphone, name: "ios", color: "#000000" }, // iOS black
+    { icon: BsGlobe, name: "web", color: "#4285F4" }, // Web blue (Google)
+  ];
 
   return (
-    <>
-    <HStack mt={4}>
+    <HStack bgColor={'rgba(255,231,6,0.05)'} p={2} borderRadius={'md'}>
       {platforms.map((p) => {
-        const platformModel = platformModels.find(pm => pm.name === p.slug);
+        const platformModel = platformModels.find((pm) => pm.name === p.slug);
         return platformModel ? (
-          <Icon key={p.id} as={platformModel.icon} color={platformModel.color} />
+          <Box key={p.id} alignItems={'center'} display={'flex'}>
+            <Icon as={platformModel.icon} color={platformModel.color} />
+          </Box>
         ) : null;
       })}
     </HStack>
-    </>
   );
 };
 

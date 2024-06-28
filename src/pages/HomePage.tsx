@@ -29,7 +29,7 @@ const HomePage = () => {
         <Box p={6}>
           <GameHeading />
         </Box>
-        <HStack m={6} gap={4}>
+        <HStack mx={6} gap={4}>
           <PlatformSelector />
           <SortSelector />
         </HStack>

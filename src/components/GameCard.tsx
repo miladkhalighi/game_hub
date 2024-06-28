@@ -12,15 +12,25 @@ import ScoreBadge from "./ScoreBadge";
 import Emoji from "./Emoji";
 import { Link } from "react-router-dom";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const cardStyle = {
   borderRadius: "lg",
   overflow: "hidden",
   shadow: "lg",
-  transition: "transform 200ms",
+  transition: "transform 300ms",
   _hover: {
-    bg: "gray.200",
+    bg: "gray.50",
     transform: "scale(1.05)",
   },
+};
+
+const imageStyle = {
+  transition: "transform 300ms",
+  _hover: {
+    transform: "scale(1.1)",
+  },
+  fit: "cover",
+  aspectRatio: 1.5,
 };
 
 interface Props {
@@ -31,11 +41,10 @@ const GameCard = ({ game }: Props) => {
   return (
     <Card sx={cardStyle}>
       <Link to={"/games/" + game.slug}>
-        <Image src={game.background_image} fit={"cover"} aspectRatio={1.5} />
+        <Image src={game.background_image} sx={imageStyle} />
         <CardBody>
           <HStack
             w={"100%"}
-            alignItems={"end"}
             justifyContent={"space-between"}
           >
             <PlatformIconList
@@ -45,10 +54,12 @@ const GameCard = ({ game }: Props) => {
           </HStack>
         </CardBody>
         <CardFooter>
+          <HStack justifyContent={'space-between'} w={'100%'}>
           <Heading fontSize={"2xl"}>
             {game.name}
-            <Emoji rating={game.rating_top} />
           </Heading>
+          <Emoji rating={game.rating_top} />
+          </HStack>
         </CardFooter>
       </Link>
     </Card>
