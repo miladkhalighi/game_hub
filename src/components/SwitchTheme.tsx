@@ -5,7 +5,7 @@ const SwitchTheme = () => {
   return (
     <Flex alignItems="center" whiteSpace="nowrap">
       <Switch
-        colorScheme="yellow"
+        colorScheme="orange"
         size={{ base: "md", md: "lg" }}
         onChange={toggleColorMode}
         isChecked={colorMode === "dark"}

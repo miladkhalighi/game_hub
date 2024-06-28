@@ -16,7 +16,7 @@ const GameDetails = () => {
     <>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
         <GridItem>
-          <Heading my={4}>{gameDetails.name}</Heading>
+          <Heading fontFamily={'Yatra One'} my={4}>{gameDetails.name}</Heading>
           <ExpandableText>{gameDetails.description_raw}</ExpandableText>
           <GameDetailsDefGrid gameDetails={gameDetails} />
         </GridItem>

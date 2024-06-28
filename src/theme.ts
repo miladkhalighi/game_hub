@@ -1,11 +1,13 @@
-
-import { extendTheme, type ThemeConfig } from '@chakra-ui/react'
+import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
+import "@fontsource/yatra-one";
 
 const config: ThemeConfig = {
-  initialColorMode: 'dark',
+  initialColorMode: "dark",
   useSystemColorMode: false,
-}
+};
 
-const theme = extendTheme({ config })
+const theme = extendTheme({
+  config,
+});
 
-export default theme
+export default theme;
