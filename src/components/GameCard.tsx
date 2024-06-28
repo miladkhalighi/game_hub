@@ -19,16 +19,12 @@ export const cardStyle = {
   shadow: "lg",
   transition: "transform 300ms",
   _hover: {
-    bg: "gray.50",
+    bg: "rgba(255,196,9,0.1)",
     transform: "scale(1.05)",
   },
 };
 
 const imageStyle = {
-  transition: "transform 300ms",
-  _hover: {
-    transform: "scale(1.1)",
-  },
   fit: "cover",
   aspectRatio: 1.5,
 };
@@ -43,10 +39,7 @@ const GameCard = ({ game }: Props) => {
       <Link to={"/games/" + game.slug}>
         <Image src={game.background_image} sx={imageStyle} />
         <CardBody>
-          <HStack
-            w={"100%"}
-            justifyContent={"space-between"}
-          >
+          <HStack w={"100%"} justifyContent={"space-between"}>
             <PlatformIconList
               platforms={game.parent_platforms.map((p) => p.platform)}
             />
@@ -54,11 +47,9 @@ const GameCard = ({ game }: Props) => {
           </HStack>
         </CardBody>
         <CardFooter>
-          <HStack justifyContent={'space-between'} w={'100%'}>
-          <Heading fontSize={"2xl"}>
-            {game.name}
-          </Heading>
-          <Emoji rating={game.rating_top} />
+          <HStack justifyContent={"space-between"} w={"100%"}>
+            <Heading fontSize={"2xl"}>{game.name}</Heading>
+            <Emoji rating={game.rating_top} />
           </HStack>
         </CardFooter>
       </Link>
