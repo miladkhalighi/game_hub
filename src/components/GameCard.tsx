@@ -25,7 +25,7 @@ export const cardStyle = {
 };
 
 const imageStyle = {
-  fit: "cover",
+  objectFit: "cover",
   aspectRatio: 1.5,
 };
 
@@ -48,7 +48,9 @@ const GameCard = ({ game }: Props) => {
         </CardBody>
         <CardFooter>
           <HStack justifyContent={"space-between"} w={"100%"}>
-            <Heading fontFamily={'Yatra One'} fontSize={"2xl"}>{game.name}</Heading>
+            <Heading fontFamily={"Yatra One"} fontSize={"2xl"}>
+              {game.name}
+            </Heading>
             <Emoji rating={game.rating_top} />
           </HStack>
         </CardFooter>

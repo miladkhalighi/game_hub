@@ -8,6 +8,9 @@ const config: ThemeConfig = {
 
 const theme = extendTheme({
   config,
+  colors : {
+    customHeading : '#FCA311'
+  }
 });
 
 export default theme;

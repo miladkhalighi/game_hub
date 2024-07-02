@@ -19,7 +19,7 @@ const GameGrid = () => {
         next={() => fetchNextPage()}
         loader={<Text>loading</Text>}
       >
-        <SimpleGrid spacing={8} margin={6} minChildWidth={"300px"}>
+        <SimpleGrid spacing={8} columns={{ base: 1, md: 2, lg: 3 }}>
           {isLoading &&
             numberOfSkeletons.map((e) => <GameCardSkeleton key={e} />)}
           {error && <Text>{error.message}</Text>}

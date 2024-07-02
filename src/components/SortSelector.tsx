@@ -1,4 +1,11 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import {
+  Button,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import useGameQueryStore from "../store";
 
@@ -13,6 +20,7 @@ const SortSelector = () => {
   ];
   const selectedSortOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
   const setSortOrder = useGameQueryStore((s) => s.setSortOrder);
+  const selectedItemColor = useColorModeValue("#663F00", "#B87100");
 
   const currentSortOrder = sortOrders.find(
     (order) => order.value === selectedSortOrder
@@ -29,7 +37,10 @@ const SortSelector = () => {
               key={item.value}
               value={item.value}
               onClick={() => setSortOrder(item.value)}
-              bg={selectedSortOrder === item.value ? "gray.400" : ""}
+              color={
+                selectedSortOrder === item.value ? selectedItemColor : "gray"
+              }
+              fontWeight={selectedSortOrder === item.value ? "bold" : "normal"}
             >
               {item.label}
             </MenuItem>

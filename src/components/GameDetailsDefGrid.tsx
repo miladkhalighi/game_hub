@@ -5,7 +5,7 @@ import ScoreBadge from './ScoreBadge'
 
 const descItem = {
     fontWeight : 'normal',
-    color : 'gray.700',
+    color : 'gray',
 };
 
 interface Props {

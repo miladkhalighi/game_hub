@@ -8,7 +8,7 @@ import {
   Image,
   Button,
   Heading,
-  useColorMode,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import getCroppedImageUrl from "../utils/imageUrl";
 import useGameQueryStore from "../store";
@@ -26,12 +26,12 @@ const GenreList = () => {
   const { error, isLoading, data } = useGenres();
   const setGenreId = useGameQueryStore((s) => s.setGenreId);
   const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
-  const { colorMode } = useColorMode();
-  const selectedTextColor = colorMode === "dark" ? "gray.300" : "black.400";
+  const headingColor = useColorModeValue("#14213D", "#E5E5E5");
+  const selectedItemColor = useColorModeValue("#663F00", "#B87100");
 
   return (
     <>
-      <Heading fontSize={"2xl"} color={"gray"} mb={3}>
+      <Heading fontSize={"2xl"} color={headingColor} mb={3}>
         Genres
       </Heading>
       {isLoading && <Spinner />}
@@ -51,12 +51,10 @@ const GenreList = () => {
                   onClick={() => setGenreId(genre.id)}
                   variant={"link"}
                   fontSize={"lg"}
-                  fontWeight={selectedGenreId === genre.id ? "bold" : "normal"}
+                  fontWeight={selectedGenreId === genre.id ? "semibold" : "normal"}
                   whiteSpace={"normal"}
                   textAlign={"left"}
-                  textColor={
-                    selectedGenreId === genre.id ? selectedTextColor : "gray"
-                  }
+                  textColor={selectedGenreId === genre.id ? selectedItemColor : "gray"}
                 >
                   {genre.name}
                 </Button>
