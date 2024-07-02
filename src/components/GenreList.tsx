@@ -35,7 +35,7 @@ const GenreList = () => {
         Genres
       </Heading>
       {isLoading && <Spinner />}
-      {error && <Text>{error.message}</Text>}
+      {error && <Text color={'gray'}>{error.message}</Text>}
       {data && (
         <List>
           {data.results.map((genre) => (

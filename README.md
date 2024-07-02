@@ -3,7 +3,7 @@
 This project is a responsive gaming web application built using React with TypeScript. It utilizes Chakra UI for styling, React Router for navigation, React Query for fetching and caching HTTP request data, and Zustand for global state management.
 
 ## Live Demo
-Check out the live demo of the application <a href="https://game-hub-blush-mu.vercel.app/">here</a>
+Check out the live demo of the application <a href="https://game-hub-blush-mu.vercel.app/">👉 Here 👈</a>
 
 ## Screenshots
 

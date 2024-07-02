@@ -22,7 +22,7 @@ const GameGrid = () => {
         <SimpleGrid spacing={8} columns={{ base: 1, md: 2, lg: 3 }}>
           {isLoading &&
             numberOfSkeletons.map((e) => <GameCardSkeleton key={e} />)}
-          {error && <Text>{error.message}</Text>}
+          {error && <Text color={'gray'}>{error.message}</Text>}
           {data?.pages.map((page, index) => (
             <React.Fragment key={index}>
               {page?.results.map((game) => (
