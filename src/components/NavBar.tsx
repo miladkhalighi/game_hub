@@ -9,6 +9,7 @@ import {
 import SearchInput from "./SearchInput";
 import logo from "../assets/logo.svg";
 import SwitchTheme from "./SwitchTheme";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const isAboveMd = useBreakpointValue({ base: false, md: true });
@@ -24,7 +25,9 @@ const NavBar = () => {
       {isAboveMd ? (
         <GridItem area="main">
           <HStack justifyContent={"space-between"} spacing={6}>
-            <Image src={logo} w={48} h={12} fit={"cover"} />
+            <Link to={"/"}>
+              <Image src={logo} w={48} h={12} fit={"cover"} />
+            </Link>
             <Box w={"100%"}>
               <SearchInput />
             </Box>
@@ -34,8 +37,10 @@ const NavBar = () => {
       ) : (
         <>
           <GridItem area="top">
-            <HStack justifyContent={'space-between'}>
-              <Image src={logo} w={48} h={12} fit={"cover"}/>
+            <HStack justifyContent={"space-between"}>
+              <Link to={"/"}>
+                <Image src={logo} w={48} h={12} fit={"cover"} />
+              </Link>
               <SwitchTheme />
             </HStack>
           </GridItem>
